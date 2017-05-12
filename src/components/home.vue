@@ -1,13 +1,34 @@
 <template>
   <div id="home">
     <router-view></router-view>
-    <ul class="toolbar">
-      <li v-for="(item,index) in tab_items">
-        <router-link :to="item.link">
-          <p  class="tab_text tab_text_icon"><i :class="[,'tab_bot','iconfont',item.icon]"></i></p>
+    <ul class="toolbar" >
+      <li>
+        <router-link to="/">
+          <p  class="tab_text tab_text_icon"><i class="tab_bot iconfont icon-520"></i></p>
 
-          <p class="tab_text" v-text="item.text"></p>
+          <p class="tab_text">520</p>
         </router-link>
+      </li>
+      <li>
+        <a href="https://www.gxw520.com/mobile/index.php?r=site">
+          <p  class="tab_text tab_text_icon"><i class="tab_bot iconfont icon-shangcheng"></i></p>
+
+          <p class="tab_text">商城</p>
+        </a>
+      </li>
+      <li>
+        <a href="https://o.gxw520.com/mobile/index/index">
+        <!--  <p  class="tab_text tab_text_icon"><i class="tab_bot iconfont icon-tongcheng"></i></p>-->
+          <p class="tab_text tab_text_icon"><img src="../assets/tc.png" alt="" class="tc_img"></p>
+          <p class="tab_text">同城</p>
+        </a>
+      </li>
+      <li>
+        <a href="https://www.gxw520.com/mobile/index.php?r=user">
+          <p  class="tab_text tab_text_icon"><i class="tab_bot iconfont icon-iconfontwode"></i></p>
+
+          <p class="tab_text">我的</p>
+        </a>
       </li>
     </ul>
   </div>
@@ -18,13 +39,6 @@
     name: '',
     data(){
       return {
-          tab_items:[
-            {icon:"icon-520",text:"520",link:"/hello"},
-            {icon:"icon-shangcheng",text:"商城",link:"/home/mall"},
-            {icon:"icon-tongcheng",text:"同城",link:"/home/city"},
-            {icon:"icon-iconfontwode",text:"我的",link:"/home/me"}
-          ]
-
       }
     }
   }
@@ -38,6 +52,7 @@
     url('//at.alicdn.com/t/font_3g00avsyif2h85mi.ttf') format('truetype'),
     url('//at.alicdn.com/t/font_3g00avsyif2h85mi.svg#iconfont') format('svg');
   }
+
   .iconfont{
     font-family:"iconfont" !important;
     font-size:16px;font-style:normal;
@@ -47,15 +62,13 @@
   }
   .toolbar {
     overflow: hidden;
-    position: absolute;
-    left:0;
-    right: 0;
-    margin: auto;
+    position: fixed;
     bottom: 0;
+    transform: translateY(0);
+    z-index: 9999;
     width: 100%;
     border-top: 0.3px solid #E6E6E6;
     background: white;
-
   }
 
   .toolbar li {
@@ -83,8 +96,12 @@
   .router-link-active .tab_text{
     color:#E22E2E;
   }
-  /*.router-link-active  div{
-    background: url("../assets/520-pre.png") no-repeat!important;
-    background-size: 100% 100%!important;
-  }*/
+  .tc_img{
+    display: block;
+    height:5.8vw ;
+    width: 6vw;
+    margin: auto;
+    margin-top: 1.8vw;
+    margin-bottom: 1vh;
+  }
 </style>
